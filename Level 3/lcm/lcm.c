@@ -7,3 +7,5 @@ unsigned int lcm(unsigned int a, unsigned int b)
         n++;
     return n;
 }
+
+// for lcm it's checking if a & b divides n, for pgcd it's checking if n divides a & b
