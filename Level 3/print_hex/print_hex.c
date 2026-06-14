@@ -11,10 +11,10 @@ int simple_atoi(char *str)
 
 void    print_hex(int n)
 {
-    char *lower_hex = "0123456789abcdef";
+    char *hex = "0123456789abcdef";
     if (n >= 16)
         print_hex(n / 16);
-    write(1, &lower_hex[n % 16], 1);
+    write(1, &hex[n % 16], 1);
 }
 
 int main(int ac, char *av[])
