@@ -33,3 +33,9 @@ int main(int ac, char *av[])
     }
     write(1, "\n", 1);
 }
+
+// #include <unistd.h>
+// int main(int ac, char*av[]){if(ac<2){write(1,"\n",1);return(0);}int i=0,first=1,start=0,first_start=0,first_end=0;char*s=av[1];
+// while((s[i]>=9&&s[i]<=13)||(s[i]==32)){i++;}first_start=i;while(s[i]&&!((s[i]>=9&&s[i]<=13)||(s[i]==32))){i++;}first_end=i;
+// while(s[i]){while(s[i]&&((s[i]>=9&&s[i]<=13)||(s[i]==32))){i++;}if(!s[i])break;if(!first)write(1," ", 1);first=0;start=i;while(s[i]&&!((s[i]>=9&&s[i]<=13)||(s[i]==32)))
+// {i++;}write(1,&s[start],i-start);}if(first_start!=first_end){if(!first)write(1," ",1);write(1,&s[first_start],first_end-first_start);}write(1,"\n",1);}
