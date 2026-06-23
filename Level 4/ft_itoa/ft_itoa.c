@@ -18,6 +18,8 @@ char *ft_itoa(int nbr)
     long n = nbr;
     int len = count_digit(n);
     char *str = malloc(sizeof(char) * (len + 1));
+    if (!str)
+        return NULL;
     if (n < 0)
     {
         str[0] = '-';

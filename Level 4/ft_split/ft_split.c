@@ -5,16 +5,16 @@ int is_delimiter(char c)
     return ((c >= 9 && c <= 13) || (c == 32));
 }
 
-int word_count(char *str)
+int word_count(char *s)
 {
     int count = 0, i = 0;
-    while (str[i])
+    while (s[i])
     {
-        while (str[i] && is_delimiter(str[i]))
+        while (s[i] && is_delimiter(s[i]))
             i++;
-        if (str[i])
+        if (s[i])
             count++;
-        while (str[i] && !is_delimiter(str[i]))
+        while (s[i] && !is_delimiter(s[i]))
             i++;
     }
     return count;
@@ -41,9 +41,20 @@ char **ft_split(char *str)
             while (start < i)
                 res[k][j++] = str[start++];
             res[k][j] = '\0';
-            k++; 
+            k++;
         }
     }
     res[k] = '\0';
     return res;
 }
+
+// #include <stdio.h>
+
+// int main(int ac, char *av[])
+// {
+//     (void)ac;
+//     char **res = ft_split(av[1]);
+//     int i = 0;
+//     while (res[i])
+//         printf("[%s]\n", res[i++]);
+// }
